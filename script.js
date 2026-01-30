@@ -6,3 +6,6 @@ function sendMail() {
     }
     email.js.send("service_00kd56m", "template_dgw822x", params).then(alert("Message sent successfully"))
 }
+import { Carousel, initMDB } from "mdb-ui-kit";
+
+initMDB({ Carousel });
