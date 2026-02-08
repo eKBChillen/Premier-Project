@@ -1,0 +1,59 @@
+mixin SliderHeader
+  -
+    var sliderData = [
+      {
+        title: "Helping Leaders",
+        text: "We look forward to help you in taking your company to new height.",
+        img: 'header-6.jpg',
+        link: '#!'
+      },
+      {
+        title: "Expert Consultants",
+        text: "Over 10 years of experience in helping clients finding comprehensive solutions.",
+        img: 'header-5.jpg',
+        link: '#!'
+      },
+      {
+        title: "Growth Partners",
+        text: "Connect with top consultants hand-picked by Elixir consulting and finance.",
+        img: 'header-1.jpg',
+        link: '#!'
+      }
+    ]
+  section.py-0
+    .swiper.theme-slider.min-vh-100(data-swiper!={
+      loop: true,
+      allowTouchMove: false,
+      autoplay: {
+        delay: 5000,
+      },
+    effect: 'fade',
+    speed: 800
+    })
+      .swiper-wrapper 
+        each value in sliderData 
+          +Slider(value)
+
+      .swiper-nav
+        .swiper-button-prev
+          span.fas.fa-chevron-left
+        .swiper-button-next
+          span.fas.fa-chevron-right
+
+mixin Slider(value) 
+  .swiper-slide(data-zanim-timeline!={})
+    +Background({ image: `${CWD}assets/img/${value.img}` })(data-zanim-xs!={from:{opacity: 0.1, filter: 'blur(10px)', scale: 1.05}, to:{opacity: 1, filter: 'blur(0px)', scale: 1}})
+    .container 
+      .row.min-vh-100.py-8.align-items-center(data-inertia!={weight: 1.5})
+        .col-sm-8.col-lg-7.px-5.px-sm-3 
+          .overflow-hidden
+            h1.fs-4.fs-md-5.lh-1(data-zanim-xs!={delay: 0.0})= value.title
+          .overflow-hidden
+            p.text-primary.pt-4.mb-5.fs-1.fs-md-2.lh-xs(data-zanim-xs!={delay:0.1})= value.text
+
+          .overflow-hidden
+            div(data-zanim-xs!={delay: 0.2})
+              a(href=`${value.link}`).btn.btn-primary.me-3.mt-3 Read more
+                span.fas.fa-chevron-right.ms-2
+              a(href=`${CWD}contact.html`).btn.btn-warning.mt-3 Contact us
+                span.fas.fa-chevron-right.ms-2

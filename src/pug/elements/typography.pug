@@ -1,0 +1,48 @@
+extends ../layouts/LayoutPages
+include ../mixins/elements/Typography
+include ../mixins/common/BlockHeader
+include ../mixins/common/CodePreviewBlock
+
+append variables 
+  - var pageHeaderConfig = { title: "Typography" }
+
+append mainContent
+  +Section 
+    +TypographyFontFamily
+
+    +TypographyHeading
+
+    +TypographyParagraph
+
+    +TypographyFontStylesDemo
+
+    +CodePreviewBlock({
+      title: 'Colors',
+      desc: `Use the following colors to change the text color`,
+      combine: true
+    })
+      +TypographyColorsDemo 
+
+    +CodePreviewBlock({
+      title: 'Sizes',
+      description: `If you want different sizes of fonts, you may use the following classes.`,
+      combine: true
+    }).mt-6
+      +TypographySizeDemo
+
+    +TypographyAlignmentDemo
+
+    +CodePreviewBlock({
+      title: 'Transformation',
+      combine: true
+    }).mt-6
+      +TextTransformationDemo
+
+    +TypographyInlineTextDemo
+    +TypographyBlockQuotesDemo
+    +TypographyListDemo
+
+
+
+
+

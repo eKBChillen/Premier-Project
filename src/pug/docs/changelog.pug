@@ -1,0 +1,48 @@
+extends ../layouts/LayoutDocumentation
+include ../mixins/common/CodePreviewBlock
+
+append variables
+	- var pageHeaderConfig = { title: 'Changelog' };
+
+block content
+	.card
+		.card-body
+			h5.font-base.mb-2.text-transform-none v3.1.0 - Maintenance Update
+			p 24 December, 2025
+			h5.fs-9 New 
+			ul.bullet-inside.ps-0
+				li Page: 
+					code public/components/form-processor.html 
+				li JS: 
+					code src/js/form-processor.js 
+
+			h5.fs-9.mt-3 Update
+			ul.bullet-inside.ps-0
+				li JS: Google map has been updated to V3 API in 
+					code src/js/googleMap.js
+				li Docs: 
+					code Google Map 
+			h5.fs-9.mt-3 Fix 
+			ul.bullet-inside.ps-0
+				li Minor bug fixes. 
+
+	.card
+		.card-body 
+			h5.font-base.text-transform-none v3.0.0 - Initial Release
+			p 26 December, 2021
+			ul.ps-3.mb-0 
+				li Converted bootstrap 4 to bootstrap 5 
+
+	.card.mb-3 
+		.card-body 
+			h5.font-base.text-transform-none v2.0.0 - Initial Release
+			ul.ps-3.mb-0 
+				li Nothing to see here! 
+	
+	.card 
+		.card-body 
+			h5.font-base.text-transform-none v1.0.0 - Initial Release 
+			p 9 February, 2020
+			ul.ps-3.mb-0 
+				li Nothing to see here!
+

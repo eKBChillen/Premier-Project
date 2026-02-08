@@ -1,0 +1,30 @@
+extends ../layouts/LayoutPages
+include ../mixins/elements/Buttons
+include ../mixins/common/BlockHeader
+include ../mixins/common/CodePreviewBlock
+
+append variables 
+  - var pageHeaderConfig = { title: "Buttons" }
+
+
+append mainContent
+  +Section 
+    // Button Colors
+    .mb-6 
+      +ButtonsColors
+
+    // Button Sizes
+    .mb-6 
+      +ButtonsSizes
+
+    // Button Shapes
+    .mb-6 
+      +ButtonsShapes
+
+    // Buttons With Icon
+    .mb-6 
+      +ButtonsIcon
+
+    // Buttons Group
+    +ButtonsGroup
+

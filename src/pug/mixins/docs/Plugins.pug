@@ -1,0 +1,77 @@
+append variables  
+	-
+		var plugins = [
+			{
+				title: 'CountUp',
+				description: `CountUp.js is a dependency-free, lightweight JavaScript class that can be used to quickly create animations that display numerical data in a more interesting way.`,
+				documentationUrl: 'https://github.com/inorganik/CountUp.js'
+			},
+			{
+				title: 'FontAwesome 5',
+				description: 'Get vector icons and social logos on your website with Font Awesome, the web\'s most popular icon set and toolkit.',
+				implementationUrl: `${CWD}elements/icons.html`,
+				documentationUrl: 'https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use'
+			},
+			{
+				title: 'Bigpicture',
+				description: `BigPicture is a pure javascript lightbox. It can display images, iframes, inline content and videos with optional autoplay for YouTube, Vimeo and even self hosted videos`,
+				implementationUrl: `${CWD}elements/modal-video.html`,
+				documentationUrl: 'https://github.com/henrygd/bigpicture'
+			},
+			{
+				title: 'Plyr',
+				description: `A simple, lightweight, accessible and customizable HTML5, YouTube and Vimeo media player that supports modern browsers.`,
+				documentationUrl: 'https://github.com/sampotts/plyr#try-plyr-online'
+			},
+			{
+				title: 'Lodash',
+				description: 'A modern JavaScript utility library delivering modularity, performance, &amp; extras.',
+				documentationUrl: 'https://lodash.com'
+			}, 
+			{
+				title: 'Is.js',
+				description: 'Micro check plugin. Check types, regexps, presence, time and more...',
+				documentationUrl: 'http://is.js.org/'
+			},
+			{
+				title: 'Swiper',
+				description: 'Swiper is the most modern free mobile touch slider with hardware accelerated transitions and amazing native behavior. It is intended to be used in mobile websites, mobile web apps, and mobile native/hybrid apps.',
+				implementationUrl: `${CWD}elements/swiper.html`,
+				documentationUrl: 'https://swiperjs.com'
+			},
+			{
+				title: 'Google Map',
+				description: `${name} uses Google map with Snazzy Maps, with different color schemes aimed towards web designers and developers.`,
+				implementationUrl: `${CWD}elements/googlemap.html`,
+				documentationUrl: 'https://developers.google.com/maps/documentation/javascript/tutorial'
+			},
+			{
+				title: 'AnchorJS',
+				description: 'AnchorJS is a tiny JavaScript library that adds deep anchor links to your content.',
+				documentationUrl: 'https://www.bryanbraun.com/anchorjs/'
+			},
+			{
+				title: 'Popper.js',
+				description: 'A library used to manage poppers in web applications. A popper is an element on the screen which "pops out" from the natural flow of your application.',
+				documentationUrl: 'https://github.com/floating-ui/floating-ui#readme'
+			},
+			{
+				title: 'Hamburgers',
+				description: 'Hamburgers is a collection of tasty CSS-animated hamburger icons. There are currently 14 different animations to choose from, with more to come.',
+				documentationUrl: 'https://jonsuh.com/hamburgers/'
+			},
+			{
+				title: 'Overlayscrollbars',
+				description: 'OverlayScrollbars is a JavaScript scrollbar plugin that enhances the look and functionality of your scrollbars.',
+				documentationUrl: 'https://kingsora.github.io/OverlayScrollbars/'
+			},
+		].sort((a,b) => a.title > b.title ? 1 : a.title < b.title ? -1 : 0)
+
+mixin Plugins(config,index)
+	h5(data-anchor class=`${index !== 0 ? 'mt-4': ''}`)=config.title
+	p.mb-0!=config.description
+	if(config.implementationUrl)
+		a(href=config.implementationUrl).font-sans-serif Implementation in elixir
+		|  -
+	if(config.documentationUrl)	
+		a(href=config.documentationUrl target='_blank').font-sans-serif  Full Documentation

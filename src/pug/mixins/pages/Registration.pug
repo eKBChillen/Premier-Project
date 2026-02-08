@@ -1,0 +1,32 @@
+mixin Registration  
+  +Section({image: `${CWD}assets/img/background-1.jpg`, className: "overlay overlay-1"}).text-center.py-0
+    .row.min-vh-100.align-items-center
+      .col-md-9.col-lg-6.mx-auto(data-zanim-timeline!={} data-zanim-trigger="scroll")
+        div(data-zanim-xs!={delay: 0.0, duration: 1}).mb-5
+          a(href=`${CWD}index.html`)
+            img(src=`${CWD}assets/img/logo-light.png` alt="logo")
+        .card(data-zanim-xs!={delay: 0.1, duration: 1})
+          .card-body.p-md-5
+            h4.text-uppercase.fs-0.fs-md-1 create your elixir account
+            form.text-start.mt-4
+              .row.align-items-center.g-4
+                .col-6 
+                  input(type="text" placeholder="First name" aria-label="First Name").form-control
+                .col-6
+                  input(type="text" placeholder="Last name" aria-label="Last Name").form-control
+                .col-12
+                  input(type="email" placeholder="Email Address" aria-label="Email Address").form-control
+                .col-12
+                  input(type="Password" placeholder="Password" aria-label="Password").form-control
+                .col-12
+                  input(type="Password" placeholder="Confirm Password" aria-label="Confirm Password").form-control
+
+              .row.align-items-center.mt-3
+                .col-6.mt-3
+                  .form-check
+                    input#rememberMe.form-check-input(type='checkbox' value='')
+                    label.form-check-label.text-500.lh-sm.fw-semi-bold(for='rememberMe')
+                      | I agree with the terms &amp; conditions
+
+                .col-6.mt-2.mt-sm-3
+                  button.btn.btn-primary.w-100(type="submit") Create Account

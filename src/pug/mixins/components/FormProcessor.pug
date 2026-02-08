@@ -1,0 +1,67 @@
+mixin FormProcessor 
+  h4 Form Processor 
+  p The form processor is used to send emails from 
+    | a contact form directly to the owner's Gmail ( or any email)
+    | without requiring a backend server. The form is completely handled 
+    | on the frontend, so you don't need to set up server-side logic. To 
+    | achieve this, you can use 
+    code Formspree
+    | .  
+    | It submits the form data to their API endpoint. It allows you to configure the recipient email, handle 
+    | success and error messages, and integrate email sending seamlessly into 
+    | your frontend application, Here is the step-by-step way of using this approach.
+
+  h4.mt-5 How to integrate Formspree.
+  
+  ul.bullet-inside 
+    li 
+      strong Create a Formspree Account 
+      ul.bullet-inside.mt-3
+        li Go To 
+          a(href="https://formspree.io/" target="_blank") Formspree 
+          | website.
+        li Sign up with your email.
+        li Create a new form in dashboard.
+        li Copy the generated 
+          code Form Endpoint URL 
+        li The endpoint will look like this: 
+          pre.mt-2 
+            code.lang-js. 
+              #{'https://formspree.io/f/abcdwxyz'}
+ 
+    li.mt-4 
+      strong Example
+      p.mb-2 To enable form submission using 
+        strong Formspree
+        | , you need to set the 
+        code data-form
+        |  attribute on the 
+        code form 
+        | tag. In 
+        code src/js/form-processor.js
+        |  , Formspree is initialized using the 
+        code data-form
+        |  attribute.
+      +ComponentCardLib
+        <form data-form onsubmit="return false">
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input id="name" class="form-control" type="text" name="name" placeholder="Name" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Your Email</label>
+            <input id="email" class="form-control" type="email" name="from" placeholder="Email" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" class="form-control" rows="8" name="message" placeholder="Write your message..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <input class="btn btn-primary d-block w-100" type="submit" value="Send!" />
+          </div>
+
+          <div class="feedback mt-3"></div>
+        </form>

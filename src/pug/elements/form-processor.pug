@@ -1,0 +1,14 @@
+extends ../layouts/LayoutPages
+include ../mixins/elements/FormProcessor
+include ../mixins/common/CodePreviewBlock
+
+prepend styles 
+
+prepend scripts
+
+append variables
+  - var pageHeaderConfig = { title: "Form Processor" }
+
+append mainContent 
+  +Section 
+    +FormProcessor

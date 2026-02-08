@@ -1,0 +1,55 @@
+.TopNavBar {
+    background-color: #2A3855 !important;
+}
+.NavBarText {
+    color: #ffffff !important;
+    border-radius: 5px;
+    display: inline-block !important;
+    width: auto !important;
+}
+.NavBarText:hover{
+     background: rgb(255, 255, 255);
+     color: #2A3855 !important;
+     border: 1px solid;
+    display: inline-block !important;
+    width: auto !important;
+     
+}
+.LAPremierText {
+    color: #ffffff !important;
+}
+.Burgerbtn {
+    color: #ffffff !important;
+    border : 1px solid #ffffff !important;
+}
+.Burgerbtn:hover {
+    background: rgb(255, 255, 255);
+    color: #2A3855 !important;
+    border: 1px solid;
+}
+.OurProjectsText {
+    color: #2A3855 !important;
+    border: 1px solid #2A3855 !important;
+}
+.OurProjectsText:hover {
+    background: #2A3855;
+    color: #ffffff !important;
+    border: 1px solid;
+}
+.HeaderP {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+     border-radius: 5px;
+    display: inline-block !important;
+    width: auto !important;
+    }
+.Headline {
+    text-shadow: 3px 3px 3px #ffffff;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+     border-radius: 5px;
+    display: inline-block !important;
+    width: auto !important;
+     font-size: 3rem !important;
+}
+.AboutUsH1 {
+   font-size: 3rem !important;
+}   

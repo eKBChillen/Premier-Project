@@ -1,0 +1,29 @@
+mixin ModalVideo 
+  +BlockHeader({
+    title: 'Modal Video'
+  }).mb-3
+
+  +CodePreviewBlock({
+    codeTitle: 'HTML'
+  })
+    +Blocks('preview')
+      .row.gx-2
+        .col-auto
+          .btn.btn-primary(data-bigpicture!={
+            ytSrc: 'FCPdIvXo2rU',
+          }) YouTube
+        .col-auto
+          .btn.btn-primary(data-bigpicture!={
+            vimeoSrc: '58558497',
+          }) Vimeo
+
+    +Blocks('code')
+      button.btn.btn-primary(data-bigpicture!={
+        ytSrc: 'FCPdIvXo2rU',
+      }) YouTube
+      button.btn.btn-primary(data-bigpicture!={
+        vimeoSrc: '58558497',
+      }) Vimeo
+
+  +CodeBlock({codeTitle: 'Javascript'})
+    script(src="public/vendors/bigpicture/BigPicture.js") 

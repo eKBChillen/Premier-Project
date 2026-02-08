@@ -1,0 +1,9 @@
+extends ../layouts/LayoutDocumentation
+include ../mixins/docs/GettingStarted
+include ../mixins/common/CodePreviewBlock
+
+append variables
+  - var pageHeaderConfig = { title: 'Getting Started' };
+
+block content
+  +GettingStarted

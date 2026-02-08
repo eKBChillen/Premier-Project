@@ -1,0 +1,32 @@
+mixin Login
+  +Section({image: `${CWD}assets/img/header-5.jpg`, className: "overlay overlay-2"}).text-center.py-0
+    .row.min-vh-100.align-items-center
+      .col-md-8.col-lg-5.mx-auto(data-zanim-timeline!={} data-zanim-trigger="scroll")
+        div(data-zanim-xs!={delay: 0.0, duration: 1}).mb-5
+          a(href=`${CWD}index.html`)
+            img(src=`${CWD}assets/img/logo-light.png` alt="logo")
+        .card(data-zanim-xs!={delay: 0.1, duration: 1})
+          .card-body.p-md-5
+            h4.text-uppercase.fs-0.fs-md-1 login with elixir
+            form.text-start.mt-4
+              .row.align-items-center
+                .col-12
+                  .input-group
+                    .input-group-text.bg-100
+                      span.far.fa-user
+                    input(type="text" placeholder="Email or username" aria-label="Text input with dropdown button").form-control
+                .col-12.mt-2.mt-sm-4
+                  .input-group
+                    .input-group-text.bg-100
+                      span.fas.fa-lock
+                    input(type="Password" placeholder="Password" aria-label="Text input with dropdown button").form-control
+
+              .row.align-items-center.mt-3
+                .col-6
+                  .form-check
+                    input#rememberMe.form-check-input(type='checkbox' value='')
+                    label.form-check-label.text-500(for='rememberMe')
+                      | Remember Me
+
+                .col-6.mt-2.mt-sm-3
+                  button.btn.btn-primary.w-100(type="submit") Login

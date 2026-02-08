@@ -1,0 +1,51 @@
+mixin Features
+  - 
+    var features = [
+      {
+        title: "Creative Support",
+        desc: "We transform brands, grow businesses, and tell brand and product stories in a most creative way.",
+        icon: "sharing.png"
+      },
+      {
+        title: "Creating Experiences",
+        desc: "We cover a large range of creative platforms and digital projects with one purpose: to create experiences.",
+        icon: "mail.png"
+      },
+      {
+        title: "Product Consulting",
+        desc: "We guide you through the pipelines that generate new products with higher potential and lower risk.",
+        icon: "target.png"
+      },
+      {
+        title: "Business Boosting",
+        desc: "We provide energy-efficient and environmentally conservative solutions to our clients to boost their business.",
+        icon: "world-globe.png"
+      },
+      {
+        title: "Strategic Approach",
+        desc: "Based on solid strategic framework and real, relevant research, we create prototypes, not presentations.",
+        icon: "money.png"
+      },
+      {
+        title: "Logistic Consulting",
+        desc: "We work buy side and sell side to give our clienrts hard hitting answers and focus hard on best opportunities.",
+        icon: "data-analytics.png"
+      },
+    ]
+  +Section.text-center
+    +SectionHeader({title: "Things You Get"})
+
+    .row
+      each feature in features 
+        +FeatureItem(feature)
+
+
+mixin FeatureItem(config) 
+  .col-md-6.col-lg-4.mt-4(data-zanim-timeline!={}  data-zanim-trigger="scroll")
+    .px-3.py-4.px-lg-4
+      .overflow-hidden
+        img(src=`${CWD}assets/img/icons/${config.icon}`, alt="icon" height="37" data-zanim-xs!={delay: 0.0})
+      .overflow-hidden
+        h5.mt-3(data-zanim-xs!={delay: 0.1})=config.title
+      .overflow-hidden
+        p.mb-0(data-zanim-xs!={delay: 0.2})!=config.desc

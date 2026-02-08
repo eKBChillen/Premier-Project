@@ -1,0 +1,16 @@
+extends ../layouts/LayoutPages
+include ../mixins/pages/about/Leaders
+include ../mixins/pages/service/Cta
+include ../mixins/common/Member
+
+
+append variables 
+  - var pageHeaderConfig = { title: "Alumni" }
+
+
+append mainContent
+  +Section.bg-100 
+    .text-center
+      +Leaders
+
+  +Cta

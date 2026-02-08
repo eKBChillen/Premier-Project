@@ -1,0 +1,118 @@
+extends ../layouts/LayoutPages
+include ../mixins/elements/Colors
+include ../mixins/common/BlockHeader
+include ../mixins/common/CodePreviewBlock
+
+append variables 
+  - var pageHeaderConfig = { title: "Colors" }
+
+append mainContent
+  - 
+    var colors = [
+      {
+        name: 'primary',
+        hex: '#2A3855',
+        text: 'white'
+      },
+      {
+        name: 'info',
+        hex: '#3680B3',
+        text: 'white'
+      },
+      {
+        name: 'success',
+        hex: '#36B36A',
+        text: 'white'
+      },
+      {
+        name: 'warning',
+        hex: '#FDD428',
+        text: 'white'
+      },
+      {
+        name: 'danger',
+        hex: '#B33641',
+        text: 'white'
+      },
+      {
+        name: 'secondary',
+        hex: '#7F7F7F',
+        text: 'white'
+      },
+      {
+        name: 'dark',
+        hex: '#1f1f1f',
+        text: 'white'
+      },
+      {
+        name: 'black',
+        hex: '#000000',
+        text: 'white'
+      },
+      {
+        name: '1100',
+        hex: '#1f1f1f',
+        text: 'white'
+      },
+      {
+        name: '1000',
+        hex: '#2b2b2b',
+        text: 'white'
+      },
+      {
+        name: '900',
+        hex: '#404040',
+        text: 'white'
+      },
+      {
+        name: '800',
+        hex: '#555555',
+        text: 'white'
+      },
+      {
+        name: '700',
+        hex: '#6a6a6a',
+        text: 'white'
+      },
+      {
+        name: '600',
+        hex: '#7F7F7F',
+        text: 'white'
+      },
+      {
+        name: '500',
+        hex: '#949494',
+        text: 'white'
+      },
+      {
+        name: '400',
+        hex: '#bebebe',
+        text: 'white'
+      },
+      {
+        name: '300',
+        hex: '#e1e1e1',
+        text: 'black'
+      },
+      {
+        name: '200',
+        hex: '#f2f2f2',
+        text: 'black'
+      },
+      {
+        name: '100',
+        hex: '#fafafa',
+        text: 'black'
+      },
+      {
+        name: 'white',
+        hex: '#ffffff',
+        text: 'black'
+      }
+    ]
+
+  +Section 
+    .row 
+      each color in colors  
+        .col-lg-6.mb-4
+          +Color(color)

@@ -1,0 +1,83 @@
+include NewsCard
+
+append variables 
+  -
+    var news = [
+      {
+        title: "Tax impacts of lease mean accounting change",
+        author: "Paul O'Sullivan",
+        text: "HMRC released a consultation document to flag some potential tax impacts that a forthcoming change...",
+        link: "news.html",
+        img: "9.jpg"
+      },
+      {
+        title: "What brexit means for data protection law",
+        author: "Enrico Ambrosi",
+        text: "Assuming that the referendum is not ignored completely, there are two possible futures for the UK...",
+        link: "news.html",
+        img: "10.jpg"
+      },
+      {
+        title: "The growing meanace of social engineering fraud",
+        author: "Robson",
+        text: "Social engineering involves the collection of information from various sources about a target...",
+        link: "news.html",
+        img: "11.jpg"
+      },
+      {
+        title: "Tax impacts of lease accounting change",
+        author: "Paul O'Sullivan",
+        text: "It is a word that has become used as a shorthand way of saying the UK leaving the EU - merging...",
+        link: "news.html",
+        img: "12.jpg"
+      },
+      {
+        title: "What brexit means for data protection law",
+        author: "Enrico Ambrosi",
+        text: "England voted for Brexit, by 53.4% to 46.6%. Wales also voted for Brexit, with Leave getting...",
+        link: "news.html",
+        img: "13.jpg"
+      },
+      {
+        title: "The growing meanace of social engineering fraud",
+        author: "Robson",
+        text: "Theresa May was against Brexit during the referendum campaign but is now in favour of it because...",
+        link: "news.html",
+        img: "14.jpg"
+      }
+    ]
+
+mixin NewsRoom 
+  +NewsWrapper
+
+  .row 
+    .col-auto.mx-auto.mt-4
+      nav(aria-label='Page navigation example').mt-5
+        ul.pagination.justify-content-center
+          li.page-item
+            a.page-link.lh-sm(href='#' aria-label='Previous')
+              span(aria-hidden='true') «
+              span.sr-only Previous
+          li.page-item
+            a.page-link.lh-sm(href='#!') 1
+          li.page-item.active
+            a.page-link.lh-sm(href='#!') 2
+          li.page-item
+            a.page-link.lh-sm(href='#!') 3
+          li.page-item
+            a.page-link.lh-sm(href='#!') 4
+          li.page-item
+            a.page-link.lh-sm(href='#!' aria-label='Next')
+              span(aria-hidden='true') »
+              span.sr-only Next
+
+
+mixin NewsWrapper(length) 
+  if !length
+    - length = news.length
+
+  - var newsItems = news.slice(0, length)
+  .row.g-4 
+    each item in newsItems 
+      .col-md-6.col-lg-4
+        +NewsCard(item)

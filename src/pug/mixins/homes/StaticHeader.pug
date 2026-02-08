@@ -1,0 +1,14 @@
+mixin StaticHeader 
+  +Section({image: `${CWD}assets/img/header-5.jpg`})(data-zanim-timeline!={} data-zanim-trigger="scroll").py-0
+    .row.min-vh-100.py-8.align-items-center(data-inertia!={weight: 1.5})
+      .col-sm-8.col-lg-7
+        .overflow-hidden
+          h1.fs-4.fs-md-5(data-zanim-xs!={delay:0.5}) Expert Consultants
+        .overflow-hidden
+          p.text-primary.mt-4.mb-5.fs-1.fs-md-2.lh-xs(data-zanim-xs!={delay:0.6}) Over 10 years of experience in helping clients finding comprehensive solutions.
+        .overflow-hidden
+          div(data-zanim-xs!={delay: 0.7})
+            a(href="#!").btn.btn-primary.me-3.mt-3 Read more
+              span.fas.fa-chevron-right.ms-2
+            a(href=`${CWD}contact.html`).btn.btn-warning.mt-3 Contact us
+              span.fas.fa-chevron-right.ms-2

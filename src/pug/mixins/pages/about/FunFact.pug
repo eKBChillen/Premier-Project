@@ -1,0 +1,37 @@
+mixin FunFact
+  - 
+    var facts = [
+      {
+        title: "Cases Solved",
+        value: 52
+      },
+      {
+        title: "Trained Experts",
+        value: 164
+      },
+      {
+        title: "Branches",
+        value: 38
+      },
+      {
+        title: "Satisfied Clients",
+        value: 100
+      }
+    ]
+  +Section({image: `${CWD}assets/img/background-15.jpg`, className: "overlay overlay-elixir"})
+    .d-flex
+      span.me-3 
+        img(src=`${CWD}assets/img/checkmark.png`, alt="checkmark" style="width: 55px")
+      .flex-1
+        h2.text-warning.fs-3.fs-lg-4 Take the right step,
+          br
+          span.text-white do the big things.
+        .row.mt-4.pe-lg-10
+          each fact, index in facts 
+            - var isEven = index % 2 === 1
+            .overflow-hidden(class=`${isEven ? 'col col-lg-3': 'col-md-3'}` data-zanim-timeline!={} data-zanim-trigger="scroll")
+              .fs-3.fs-lg-4.mb-0.fw-bold.text-white.mt-lg-5.mt-3.lh-xs(data-zanim-xs!={delay: 0.1} data-countup!={endValue: fact.value}) #{fact.value}
+              h6.fs-0.text-white(data-zanim-xs!={delay: 0.2}) #{fact.title}
+            if index === 1
+              .w-100.d-flex.d-lg-none
+

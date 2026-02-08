@@ -1,0 +1,40 @@
+mixin Welcome
+  - 
+    var items = [
+      {
+        title: "Business Consulting",
+        desc: "Solution for every business related problems, readily <br /> and skillfully.",
+        icon: "far fa-chart-bar"
+      },
+      {
+        title: "Risk Management",
+        desc: "Calculate every possible risk in your business, take <br/> control over them.",
+        icon: "far fa-bell"
+      },
+      {
+        title: "Market Research",
+        desc: "Know the market before taking any step, reduce <br/> risks before you go.",
+        icon: "far fa-lightbulb"
+      },
+      {
+        title: "Quality Services",
+        desc: "Experience unparalleled service, from beginning <br/> to final construction.",
+        icon: "fas fa-headset"
+      }
+    ]
+  +Section.bg-white.text-center
+    +SectionHeader({
+      title: "Welcome to the Elixir",
+      desc: "Get expert consultancy and support with Elixir, an advisory firm that stand by your side always."
+    })
+    .row.mt-4.mt-md-5
+      each item in items 
+        +WelcomeItem(item)
+
+
+mixin WelcomeItem(config) 
+  .col-sm-6.col-lg-3.mt-4(data-zanim-timeline!={} data-zanim-trigger="scroll")
+    .ring-icon.mx-auto(data-zanim-xs!={delay: 0.0})
+      span(class=`${config.icon}`)
+    h5.mt-4(data-zanim-xs!={delay: 0.1})=config.title 
+    p.mb-0.mt-3.px-3(data-zanim-xs!={delay: 0.2})!=config.desc

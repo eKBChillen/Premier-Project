@@ -1,0 +1,85 @@
+append variables
+	-
+		var social = [
+			{
+				title: "Linkedin",
+				icon: "linkedin-in"
+			},
+			{
+				title: "Twitter",
+				icon: "twitter"
+			},
+			{
+				title: "Facebook",
+				icon: "facebook-f"
+			},
+			{
+				title: "Google+",
+				icon: "google-plus-g"
+			},
+		]
+
+		var importantLinks = [
+			{
+				title: "Contact Us",
+				link: 'contact.html'
+			},
+				{
+					title: "FAQ",
+					link: "#!"
+			},
+				{
+					title: "Privacy Policy",
+					link: "#!"
+			},
+				{
+					title: "Terms of Use",
+					link: "#!"
+			},
+				{
+					title: "Global Office",
+					link: "#!"
+			},
+				{
+					title: "Local Office",
+					link: "#!"
+			}
+		]
+
+mixin PreFooter 
+	+Section(style="background-color: #3D4C6F")
+		.row.align-items-center
+			.col-lg-6
+				.bg-primary.text-white.p-5.p-lg-6.rounded-3
+					h4.text-white.fs-1.fs-lg-2.mb-1 Sign up for email alerts
+					p.text-white Stay current with our latest insights
+					form.mt-4(onsubmit="return false")
+						.row.align-items-center
+							.col-md-7.pe-md-0
+								.input-group
+									input#emailExample(type="email" name="emailAddress" placeholder="Enter Email Here").form-control
+							.col-md-5.mt-3.mt-md-0
+								.d-grid
+									button.btn.btn-warning(type="submit")
+										span.text-primary.fw-semi-bold Submit
+
+			.col-lg-6.mt-4.mt-lg-0
+				.row
+					.col-6.col-lg-4.text-white.ms-lg-auto
+						ul.list-unstyled
+							each link in importantLinks
+								li.mb-3
+									a(href=`${CWD}${link.link}`).text-white #{link.title}
+
+					.col-6.col-sm-5.ms-sm-auto
+						ul.list-unstyled 
+							each item in social
+								+SocialItem(item)
+
+
+mixin SocialItem(config)
+	li.mb-3
+		a(href="#!").text-decoration-none.d-flex.align-items-center 
+			span.brand-icon.me-3
+				span(class=`fab fa-${config.icon}`)
+			h5.fs-0.text-white.mb-0.d-inline-block #{config.title}

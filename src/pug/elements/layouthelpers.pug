@@ -1,0 +1,36 @@
+extends ../layouts/LayoutPages
+include ../mixins/elements/LayoutHelpers
+include ../mixins/common/BlockHeader
+include ../mixins/common/CodePreviewBlock
+
+append variables 
+  - var pageHeaderConfig = { title: "Layout Helpers" }
+
+append mainContent
+  - var values = [100, 75, 50, 25]
+
+  +Section 
+    .mb-5 
+      p Easily make an element as wide or as tall (relative to its parent) with our width and height utilities. Includes support for 
+        code.highlighter-rouge 25%
+        | , 
+        code.highlighter-rouge 50%
+        | , 
+        code.highlighter-rouge 75%
+        | , and 
+        code.highlighter-rouge 100%
+        |  by default.
+
+    .pb-6 
+      each item in values 
+        .bg-100.text-100.p-2.border-primary.border-1.mb-3(class=`w-${item}` style="border-style: dashed;")
+          code .w-#{item}
+
+    .pb-5 
+      .row.pb-3(style='height: 300px')
+        each item in values 
+          .col 
+            .p-2.border-primary.border-1.mb-3(class=`h-${item}` style="border-style: dashed;")
+              code .h-#{item}
+
+    +SpecialHeight

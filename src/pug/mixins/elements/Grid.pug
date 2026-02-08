@@ -1,0 +1,18 @@
+mixin Grid(col)
+  - var colCount = 12/col
+
+  +CodeBlock.mb-0 
+    div(class=`col-${col}`)
+  +PreviewBlock 
+    .row 
+      while 0 < colCount 
+        div(class=`col-${col}`)
+          .py-5.border-dashed.text-400.bg-100
+
+        - colCount--
+
+
+
+
+
+

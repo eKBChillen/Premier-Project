@@ -1,0 +1,24 @@
+mixin Navbar 
+  .sticky-top.navbar-elixir
+    .container 
+      nav.navbar.navbar-expand-lg 
+        a.navbar-brand(href=`${CWD}index.html`)
+          img(src=`${CWD}assets/img/logo-dark.png` alt="logo")
+        button.navbar-toggler.p-0(type='button' data-bs-toggle='collapse' data-bs-target='#primaryNavbarCollapse' aria-controls='primaryNavbarCollapse' aria-expanded='false' aria-label='Toggle navigation')
+          span.hamburger.hamburger--emphatic
+            span.hamburger-box
+              span.hamburger-inner
+        #primaryNavbarCollapse.collapse.navbar-collapse
+          ul.navbar-nav.py-3.py-lg-0.mt-1.mb-2.my-lg-0.ms-lg-n1
+            each menu in sitemap 
+              li.nav-item.dropdown
+                if menu.pages 
+                  a.nav-link.dropdown-toggle.dropdown-indicator(href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false")= menu.name
+                  ul.dropdown-menu
+                    each submenu in menu.pages 
+                      li
+                        a.dropdown-item(href=`${CWD}${submenu.path}.html`)=submenu.name
+                else 
+                  a.nav-link(href=`${CWD}${menu.path}.html` role="button")= menu.name
+
+          a(href='https://themewagon.com/themes/elixir/' target="_blank").btn.btn-outline-primary.rounded-pill.btn-sm.border-2.d-block.d-lg-inline-block.ms-auto.my-3.my-lg-0 Purchase

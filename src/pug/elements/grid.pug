@@ -1,0 +1,19 @@
+extends ../layouts/LayoutPages
+include ../mixins/elements/Grid
+include ../mixins/common/BlockHeader
+include ../mixins/common/CodePreviewBlock
+
+append variables 
+  - var pageHeaderConfig = { title: "Grid" }
+
+append mainContent
+  - var grids = [12, 6, 4, 3, 2, 1]
+  +Section 
+    +BlockHeader({
+      title: 'Bootstrap 4 grid system',
+      desc: 'We use bootstrap 4 grid system. For more details see <a href="https://getbootstrap.com/docs/4.0/layout/grid/" target="_blank">Documentation →</a>'
+    })
+
+    each grid in grids 
+      +Grid(grid)
+

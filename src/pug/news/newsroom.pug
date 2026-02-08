@@ -1,0 +1,11 @@
+extends ../layouts/LayoutPages
+include ../mixins/news/NewsRoom
+
+
+append variables 
+  - var pageHeaderConfig = { title: "News Room" }
+
+
+append mainContent
+  +Section.bg-100 
+    +NewsRoom

@@ -1,0 +1,17 @@
+extends ../layouts/LayoutComponent
+include ../mixins/components/FormProcessor
+include ../mixins/common/ComponentLink
+
+prepend scripts 
+	script(src=`https://smtpjs.com/v3/smtp.js`)
+
+append variables 
+	- var pageTitle = 'Smtpjs';
+
+block component
+	+ComponentLink({
+		text:'For more detail see, ',
+		linkText: 'Formspree Documentation',
+		link: `https://formspree.io/javascript/`
+	})
+	+FormProcessor

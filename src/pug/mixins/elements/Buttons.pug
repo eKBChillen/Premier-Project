@@ -1,0 +1,239 @@
+mixin IconButton(config)
+	a(href="#!").btn.btn-icon.btn-outline-primary.btn-icon-left.me-3.mb-3
+		span(class=config.icon)
+		| .btn-icon
+
+mixin ButtonsColors
+	+BlockHeader({
+		title: 'Buttons Colors',
+		desc: '<strong>Elixir</strong> use <code>.btn</code> class for default button style. Customize the color of a button using <code>.btn-*</code> and <code>.btn-outline-*</code>. You can use the following classes.'
+	})
+
+	//- Solid Button
+	+CodePreviewBlock({
+		title: 'Solid Buttons'
+	})
+		- var colors = Object.keys(themeColor)
+		+Blocks('preview')
+			each item in colors 
+				a(href="#!" class=`btn-${item}`).btn.me-3.mb-3 .btn-#{item}
+
+		+Blocks('code')
+			each item in colors 
+				a(href="#!" class=`btn-${item}`).btn .btn-#{item}
+				= '\n'
+
+	//- Outline Buttons
+	+CodePreviewBlock({
+		title: 'Outline Buttons'
+	})
+		- var colors = Object.keys(themeColor)
+		+Blocks('preview')
+			each item in colors 
+				a(href="#!" class=`btn-outline-${item}`).btn.me-3.mb-3 .btn-outline-#{item}
+
+		+Blocks('code')
+			each item in colors 
+				a(href="#!" class=`btn-outline-${item}`).btn .btn-outline-#{item}
+				= '\n'
+
+	//- Inverted Buttons
+	+CodePreviewBlock({
+		title: 'Inverted Buttons',
+		previewClass: 'bg-1100 px-4 pt-4'
+	})
+		- var colors = ['light', 'outline-light', 'outline-warning']
+
+		+Blocks('preview')
+			each item in colors 
+				a(href="#!" class=`btn-${item}`).btn.me-3.mb-4 .btn-outline-#{item}
+
+		+Blocks('code')
+			each item in colors 
+				a(href="#!" class=`btn-${item}`).btn .btn-outline-#{item}
+				= '\n'
+
+
+mixin ButtonsSizes
+	+BlockHeader({
+		title: 'Buttons Sizes',
+		desc: 'Customize the size of a button using <code>.btn-sm</code> and <code>.btn-lg</code>'
+	}).mb-4
+
+	//- Buttons size
+	+CodePreviewBlock
+		- var sizes = ['-sm', null, '-lg']
+		+Blocks('preview')
+			each size in sizes 
+				a(href="#!" class=`${size ? 'btn' : ''}${size || '' }`).btn.btn-outline-primary.me-3.mb-3 .btn#{size}
+
+		+Blocks('code')
+			each size in sizes 
+				a(href="#!" class=`${size ? 'btn' : ''}${size || ''}`).btn.btn-outline-primary .btn#{size}
+				= '\n'
+
+
+mixin ButtonsShapes
+	+BlockHeader({
+		title: 'Buttons Shapes',
+		desc: 'Customize the shape of a button using <code>.btn</code> and <code>.rounded-pill</code>'
+	}).mb-4
+
+	//- Buttons shapes
+	+CodePreviewBlock
+		+Blocks('preview')
+			a(href="#!").btn.btn-primary.me-3 .btn
+			a(href="#!").btn.btn-primary.rounded-pill .rounded-pill
+
+		+Blocks('code')
+			a(href="#!").btn.btn-primary .btn
+			= '\n'
+			a(href="#!").btn.btn-primary.rounded-pill .rounded-pill
+			= '\n'
+
+
+mixin ButtonsIcon
+	+BlockHeader({
+		title: 'Buttons with Icon',
+		desc: 'Use <code>.btn-icon-left</code> or <code>.btn-icon-right</code> class for the icon position. For outline button, use <code>.btn-outline-*</code> . To make capsule like button, you can use<code>.btn-capsule</code> class.'
+	}).mb-4
+
+	//- Buttons with icon
+	//- Icon Button
+	+CodePreviewBlock
+		- 
+			var iconButtons = [
+				{
+					align: 'left',
+					button: 'primary',
+				},
+				{
+					align: 'right',
+					button: 'primary',
+				},
+				{
+					align: 'left',
+					button: 'outline-primary',
+				},
+				{
+					align: 'right',
+					button: 'outline-primary',
+				}
+			]
+
+
+		+Blocks('preview')
+			each btn in iconButtons 
+				a(href="#!" class=`btn-${btn.button} btn-icon-${btn.align}`).btn.btn-icon.me-4.mb-4
+					span.btn-icon-wrapper
+						span.fab.fa-gitlab
+					| .btn-icon
+
+			br
+
+			each btn in iconButtons 
+				a(href="#!" class=`btn-${btn.button} btn-icon-${btn.align}`).btn.btn-icon.rounded-pill.me-4.mb-4
+					span.btn-icon-wrapper
+						span.fab.fa-gitlab
+					| .btn-icon
+
+
+
+		+Blocks('code')
+			each btn in iconButtons 
+				a(href="#!" class=`btn-${btn.button} btn-icon-${btn.align}`).btn.btn-icon
+					= '\n'
+					span.btn-icon-wrapper
+						= '\n\t'
+						span.fab.fa-gitlab
+						= '\n\t'
+					| .btn-icon
+				= '\n'
+
+
+			each btn in iconButtons 
+				a(href="#!" class=`btn-${btn.button} btn-icon-${btn.align}`).btn.btn-icon.rounded-pill
+					= '\n'
+					span.btn-icon-wrapper
+						= '\n\t'
+						span.fab.fa-gitlab
+						= '\n\t'
+					| .btn-icon
+					='\n'
+				= '\n'
+
+	//- Special Button
+	+CodePreviewBlock({
+		title: "Special Buttons",
+		desc: 'You can use the classes <code>.btn-facebook</code>, <code>.btn-twitter</code>, <code>.btn-google-plus</code>, <code>.btn-github</code> etc. to color buttons with their corresponding brand colors.'
+	})
+		- 
+			var buttons = [
+				{
+					class: 'facebook',
+					icon: 'facebook-f'
+				},
+				{
+					class: 'twitter',
+					icon: 'twitter'
+				},
+				{
+					class: 'google-plus',
+					icon: 'google-plus-g'
+				},
+				{
+					class: 'github',
+					icon: 'github'
+				}
+			] 
+
+		+Blocks('preview')
+			each btn in buttons
+				a(href="#!" class=`btn-${btn.class}`).btn.btn-icon.btn-icon-left.me-3.mb-3
+					span.btn-icon-wrapper
+						span(class=`fa-${btn.icon}`).fab
+					| Join 
+					+getWord(btn.class)
+
+		+Blocks('code')
+			each btn in buttons
+				a(href="#!" class=`btn-${btn.class}`).btn.btn-icon.btn-icon-left
+					= '\n'
+					span.btn-icon-wrapper
+						='\n\t'
+						span(class=`fa-${btn.icon}`).fab
+						='\n\t'
+					| Join 
+					+getWord(btn.class)
+					='\n'
+				='\n'
+
+	+PreviewBlock({
+		title: 'Play Buttons'
+	})
+		.bg-1100.p-3
+			a(href='#')
+				img(src=`${CWD}assets/img/icon-play.svg` width=80 alt="icon button")
+			a(href='#').ms-5
+				img(src=`${CWD}assets/img/icon-play-o.svg` width=80 alt="icon button")
+
+
+mixin ButtonsGroup
+	+BlockHeader({
+		title: 'Buttons Group',
+		desc: 'Group a series of buttons together on a single line with the button group. Wrap a series of buttons with <code>.btn</code>	in <code>.btn-group</code>'
+	}).mb-4
+
+	//- Buttons Group
+	+CodePreviewBlock
+		- var buttons = ['primary', 'primary', 'primary']
+
+		+Blocks('preview')
+			.btn-group
+				each btn in buttons  
+					button(class=`btn-outline-${btn}`).btn .btn-outline-#{btn}
+
+		+Blocks('code')
+			.btn-group(role='group' aria-label='Basic outlined example')
+				each btn in buttons  
+					button(class=`btn-outline-${btn}`).btn .btn-outline-#{btn}

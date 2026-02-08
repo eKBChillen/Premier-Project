@@ -1,0 +1,50 @@
+mixin Testimonial
+  - 
+    var testimonialItems = [
+      {
+        text: "Their work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!",
+        author: "Michael Clarke",
+        designation: "CEO, A.E.T Institute",
+        img: "client1.png"
+      },
+      {
+        text: "Writing case studies was a daunting task for us. We didn’t know where to begin or what questions to ask, and clients never seemed to follow through when we asked. Elixir team did everything – with almost no time or effort for me!",
+        author: "Maria Sharapova",
+        designation: "Managing Director, Themewagon Inc.",
+        img: "client2.png"
+      },
+      {
+        text: "As a sales gamification company, we were skeptical to work with a consultant to optimize our sales emails, but Elixir was highly recommended by many other Y-Combinator startups we knew. Elixir helped us run a ~6 week email campaign.",
+        author: "David Beckham",
+        designation: "Chairman, Harmony Corporation",
+        img: "client3.png"
+      }
+    ]
+  +Section.bg-white 
+    .swiper.theme-slider(data-swiper!={
+      loop: true,
+      slidesPerView: 1,
+      autoplay: {
+        delay: 5000,
+      },
+    })
+      .swiper-wrapper 
+        each item in testimonialItems
+          +TestimonialSlider(item)
+
+      .swiper-nav
+        .swiper-button-prev.icon-item.icon-item-lg
+          span.fas.fa-chevron-left.fs--2
+        .swiper-button-next.icon-item.icon-item-lg
+          span.fas.fa-chevron-right.fs--2
+
+
+mixin TestimonialSlider(config) 
+  .swiper-slide
+    .row.px-lg-8
+      .col-4.col-md-3.mx-auto
+        img(src=`${CWD}assets/img/${config.img}` alt="Member").rounded-3.mx-auto.img-fluid
+      .col-md-9.mt-4.mt-md-0.px-4.px-sm-3
+        p.lead= config.text 
+        h6.fs-0.mb-1.mt-4 #{config.author}
+        p.mb-0.text-500 #{config.designation}

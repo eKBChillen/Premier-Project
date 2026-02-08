@@ -1,0 +1,8 @@
+mixin Color(config) 
+  .row.align-items-center
+    .col-4.col-sm-3.rounded-3.py-4.text-center(class=`bg-${config.name} text-${config.text} ${config.hex.slice(1, 2) === 'f' ? 'border border-1 border-dark' : ''}`)
+      span.text-uppercase.fs--1.mb-0= config.hex
+    .col
+      code .text-#{config.name}
+      br
+      code .bg-#{config.name}

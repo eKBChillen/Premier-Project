@@ -1,0 +1,198 @@
+append variables
+  - var title = 'Elixir | Beautiful Site Template for Agencies & Professionals';
+  - var theme = `${name}-${version}`;
+  - var bootstrapVersion = '5.1';
+  - var attrsMain = { id: 'top', class: 'main' };
+  - var attrsLayout = { class: 'container', 'data-layout': 'container' }
+  - var colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
+  - var grays = ['black', 1100, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100, 'white'];
+  - var colorsAll = colors.concat(grays);
+  -
+    var themeColor =  {
+      primary: '#2A3855',
+      secondary: '#7F7F7F',
+      success: '#36b36a',
+      info: '#3680b3',
+      warning: '#FDD428',
+      danger: '#b33641',
+      light: '#fafafa',
+      dark: '#1f1f1f',
+    }
+
+  - var footer = true;
+  - var pathName = (locals.filename || locals.history[0]).split('\\').join('/').split('src/pug/').pop().split('.pug').shift();
+  - var pageTree = pathName.split('/');
+  - var CWD = pageTree.slice(1).map(() => '../').join('');
+
+  -
+    var sitemap = [
+      {
+        name: "Home",
+        pages: [
+          {
+            name: "Slider Header",
+            path: "index"
+          },
+          {
+            name: "Slider Classic",
+            path: "homes/header-slider-classic"
+          },
+          {
+            name: "Static Header",
+            path: "homes/header-static"
+          },
+          {
+            name: "Static Classic",
+            path: "homes/header-static-classic"
+          },
+          {
+            name: "Youtube Background",
+            path: "homes/header-youtube-video"
+          },
+          {
+            name: "Youtube Classic",
+            path: "homes/header-youtube-video-classic"
+          },
+          {
+            name: "Self-hosted Video",
+            path: "homes/header-selfhosted-video"
+          },
+          {
+            name: "Self-hosted Classic",
+            path: "homes/header-selfhosted-video-classic"
+          }
+        ]
+      },
+      {
+        name: "Pages",
+        pages: [
+          {
+            name: "Services",
+            path: "pages/service"
+          },
+          {
+            name: "About",
+            path: "pages/about"
+          },
+          {
+            name: "Alumni",
+            path: "pages/alumni"
+          },
+          {
+            name: "Blank Page",
+            path: "pages/blank"
+          },
+          {
+            name: "404 Page",
+            path: "pages/404"
+          },
+          {
+            name: "Login",
+            path: "pages/login"
+          },
+          {
+            name: "Registration",
+            path: "pages/registration"
+          },
+
+        ]
+      },
+      {
+        name: "News",
+        pages: [
+          {
+            name: "Newsroom",
+            path: "news/newsroom"
+          },
+          {
+            name: "Single News",
+            path: "news/news"
+          },
+
+        ]
+      },
+      {
+        name: "Elements",
+        pages: [
+          {
+            name: "Buttons",
+            path: "elements/buttons"
+          },
+          {
+            name: "Colors",
+            path: "elements/colors"
+          },
+          {
+            name: "Form Processor",
+            path: "elements/form-processor"
+          },
+          {
+            name: "Google Map",
+            path: "elements/googlemap"
+          },
+          {
+            name: "Grid",
+            path: "elements/grid"
+          },
+          {
+            name: "Icons",
+            path: "elements/icons"
+          },
+          {
+            name: "Layout Helpers",
+            path: "elements/layouthelpers"
+          },
+          {
+            name: "Modal Video",
+            path: "elements/modal-video"
+          },
+          {
+            name: "Swiper",
+            path: "elements/swiper"
+          },
+          {
+            name: "Typography",
+            path: "elements/typography"
+          }
+        ]
+      },
+      {
+        name: "Contact",
+        path: "contact"
+      },
+      {
+        name: "Docs",
+        pages: [
+          {
+            name: "Getting Started",
+            path: "docs/getting-started"
+          },
+          {
+            name: "File Structure",
+            path: "docs/file-structure"
+          },
+          {
+            name: "Customization",
+            path: "docs/customization"
+          },
+          {
+            name: "Gulp",
+            path: "docs/gulp"
+          },
+          {
+            name: "RTL",
+            path: "docs/rtl"
+          },
+          {
+            name: "Plugins",
+            path: "docs/plugins"
+          },
+          {
+            name: "Changelog",
+            path: "docs/changelog"
+          },
+
+        ]
+      },
+    ];
+

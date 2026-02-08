@@ -1,0 +1,10 @@
+.breadcrumb-item+.breadcrumb-item::before {
+  padding-right: .5rem;
+  padding-left: .5rem;
+  position: relative;
+  top: 0.125rem;
+}
+
+.breadcrumb-item.active {
+  font-weight: 400;
+}

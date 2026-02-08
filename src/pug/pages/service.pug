@@ -1,0 +1,29 @@
+extends ../layouts/LayoutPages
+include ../mixins/pages/service/ServiceIntro
+include ../mixins/pages/service/About
+include ../mixins/pages/service/Cta
+include ../mixins/pages/service/Testimonial
+include ../mixins/pages/service/Clients
+
+prepend styles
+  link(href=`${CWD}vendors/swiper/swiper-bundle.min.css`, rel='stylesheet')
+
+prepend scripts
+  script(src=`${CWD}vendors/swiper/swiper-bundle.min.js`)
+
+append variables 
+  - var pageHeaderConfig = { title: "Services" }
+
+append mainContent
+  +Section
+    +ServiceIntro
+
+  +Section.bg-100 
+    +SectionHeader({title: "Industries"}).mb-7
+    +About
+
+  +Cta
+
+  +Testimonial
+
+  +Clients

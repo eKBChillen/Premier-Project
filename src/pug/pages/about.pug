@@ -1,0 +1,22 @@
+extends ../layouts/LayoutPages
+include ../mixins/pages/about/Company
+include ../mixins/pages/about/FunFact
+include ../mixins/pages/about/Leaders
+include ../mixins/pages/service/Cta
+
+append variables 
+  - var pageHeaderConfig = { title: "About" }
+
+prepend scripts 
+  script(src=`${CWD}vendors/countup/countUp.umd.js`)
+
+append mainContent
+  +Company
+
+  +FunFact
+
+  +Section 
+    +SectionHeader({title: "Global leadership"}).mb-5
+    +Leaders
+
+  +Cta

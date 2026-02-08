@@ -1,0 +1,58 @@
+extends LayoutTheme
+
+include ../mixins/homes/Welcome
+include ../mixins/homes/Story
+include ../mixins/homes/Features
+include ../mixins/homes/RequestForm
+include ../mixins/pages/service/About
+include ../mixins/pages/service/ServiceIntro
+include ../mixins/pages/service/Cta
+include ../mixins/pages/about/Leaders
+include ../mixins/pages/about/FunFact
+include ../mixins/pages/service/Testimonial
+include ../mixins/pages/service/Clients
+include ../mixins/news/NewsRoom
+
+prepend styles
+  link(href=`${CWD}vendors/swiper/swiper-bundle.min.css`, rel='stylesheet')
+
+prepend scripts
+  script(src=`${CWD}vendors/bigpicture/BigPicture.js`) 
+  script(src=`${CWD}vendors/countup/countUp.umd.js`) 
+  script(src=`${CWD}vendors/swiper/swiper-bundle.min.js`)
+
+
+append mainContent
+  block homeBanner 
+
+  +Welcome
+
+  +Story
+
+  +Section.bg-100 
+    +SectionHeader({title: "Our Services"}).mb-6
+    +About
+
+  +Section
+    +SectionHeader({title: "Why Choose Elixir"}).mb-7
+    +ServiceIntro
+
+  +Cta
+
+  +Features
+
+  +RequestForm
+
+  +Section.bg-100.text-center 
+    +SectionHeader({title: "Global leadership"}).mb-6
+    +Leaders
+
+  +FunFact
+
+  +Testimonial
+
+  +Clients
+
+  +Section.bg-100
+    +SectionHeader({title: "Latest News"}).mb-6
+    +NewsWrapper(3)

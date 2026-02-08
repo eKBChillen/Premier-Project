@@ -1,0 +1,19 @@
+extends ../layouts/LayoutPages
+include ../mixins/news/SingleNews
+include ../mixins/news/NewsCard
+
+
+prepend styles
+  link(href=`${CWD}vendors/swiper/swiper-bundle.min.css`, rel='stylesheet')
+
+prepend scripts
+  script(src=`${CWD}vendors/swiper/swiper-bundle.min.js`)
+
+
+block beforeMainContent
+  +TopBar
+  +Navbar
+
+append mainContent
+  +Section.bg-100 
+    +SingleNews

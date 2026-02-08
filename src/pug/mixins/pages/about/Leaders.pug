@@ -1,0 +1,46 @@
+mixin Leaders 
+  - 
+    var members = [
+      {
+        name: "Reenal Scott",
+        designation: "Advertising Consultant",
+        desc: "Reenal Scott is the Founder and CEO of Elixir, which he started from his dorm room in 2013 with 3 people only.",
+        img: "3"
+      },
+      {
+        name: "Lily Anderson",
+        designation: "Activation Consultant",
+        desc: "Lily leads Elixir UK and oversees the company’s Customer Operations teams supporting millions ofr users.",
+        img: "4"
+      },
+      {
+        name: "Thomas Anderson",
+        designation: "Change Management Consultant",
+        desc: "As the VP of People, Thomas’s focus lies in the development and optimization of talent retention.",
+        img: "5"
+      },
+      {
+        name: "Legartha Mantana",
+        designation: "Brand Management Consultant",
+        desc: "As General Counsel of Elixir, Tony oversees global legal activities and policies across all aspects.",
+        img: "6"
+      },
+      {
+        name: "John Snow",
+        designation: "Business Analyst",
+        desc: "John has overseen the meteoric growth while protecting scaling its uniquely creative and culture.",
+        img: "7"
+      },
+      {
+        name: "Ragner Lothbrok",
+        designation: "Business Consultant",
+        desc: "Ragner, SVP of Engineering, oversees Elixir’s vast engineering organization which drives the core programming.",
+        img: "1"
+      }
+    ]
+
+  .row&attributes(attributes) 
+    each member, index in members 
+      - var isFirst = index === 0
+      .col-sm-6.col-lg-4(class=`${!isFirst ? 'mt-4' : ''} ${index === 1 ? 'mt-sm-0' : ''} ${index === 2 ? 'mt-lg-0' : ''} `)
+        +Member(member)

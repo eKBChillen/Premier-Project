@@ -1,0 +1,153 @@
+/*-----------------------------------------------
+|   Object fit and Z-index
+-----------------------------------------------*/
+.fit-cover{ object-fit: cover; }
+.z-index-1{ z-index: 1 !important; }
+.z-index-2{ z-index: 2 !important; }
+.z-index--1{ z-index: -1 !important; }
+
+/*-----------------------------------------------
+|   Sidebar
+-----------------------------------------------*/
+.sticky-sidebar{ 
+  position: sticky;
+  z-index: $zindex-sticky;
+  top: $top-nav-height + 1; 
+}
+
+/*-----------------------------------------------
+|   Custom circle
+-----------------------------------------------*/
+.circle-dashed{
+  border: 1px dashed $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+/*-----------------------------------------------
+|   Miscellaneous
+-----------------------------------------------*/
+
+.hover-text-decoration-none{
+  @include hover-focus{
+    text-decoration: none;
+  }
+}
+.resize-none{ resize: none; }
+
+.collapsed .collapse-icon {
+  transition: $transition-base;
+  transform: rotate(0deg);
+}
+.collapse-icon {
+  transition: $transition-base;
+  transform: rotate(90deg);
+}
+
+[data-dismiss="dropdown"],
+[data-bs-offset-top],
+[data-bs-toggle="collapse"],
+[data-bs-toggle="tooltip"],
+[data-bs-toggle="popover"]{
+  *{
+    pointer-events: none;
+  }
+}
+
+/*-----------------------------------------------
+|   Outline
+-----------------------------------------------*/
+
+.outline-none {
+  outline: none;
+  box-shadow: none;
+  @include hover-focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+/*-----------------------------------------------
+|   Vertical Line (used in kanban header)
+-----------------------------------------------*/
+.vertical-line {
+  &:after {
+    position: absolute;
+    content: "";
+    height: 75%;
+    width: 0.063rem;
+    background: var(--#{$variable-prefix}300);
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &.vertical-line-400 {
+    &:after {
+      background-color: var(--#{$variable-prefix}400);
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Transition                                 */
+/* -------------------------------------------------------------------------- */
+
+.transition-base {
+  transition: $transition-base;
+}
+.transition-none{
+  transition: none;
+}
+
+.fsp-75{
+  font-size: 75%;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    Width                                   */
+/* -------------------------------------------------------------------------- */
+
+// used in chat
+.min-w-0{ min-width: 0; }
+
+// About Drirection Caret
+.elixir-caret{
+  position: absolute;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  height: 1.563rem;
+  width: 1.563rem;
+  z-index: 99;
+  transform: translate3d(-50%, -50%, 0) rotate(45deg);
+}
+
+
+.blockquote {
+  position: relative;
+  padding-left: 3.125rem;
+  &:after{
+      content: "";
+      background: url("../img/icon-quote.svg") no-repeat;
+      background-size: contain;
+      width: 3.125rem;
+      height: 3.125rem;
+      position: absolute;
+      left: 0;
+      top: -0.313rem;
+  }
+}
+
+
+
+// Elixir Special class
+.column-lg-2{
+  @include media-breakpoint-up(lg){
+      column-count: 2;
+      column-gap: 3em;
+  }
+}

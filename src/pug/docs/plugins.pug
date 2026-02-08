@@ -1,0 +1,15 @@
+extends ../layouts/LayoutDocumentation
+include ../mixins/common/CodePreviewBlock
+include ../mixins/docs/Plugins
+
+append variables
+  - var pageHeaderConfig = { title: 'Plugins' };
+
+block content
+  each plugin, index in plugins
+    +Plugins(plugin,index)
+
+
+
+
+  

@@ -1,0 +1,42 @@
+extends ../layouts/LayoutPages
+include ../mixins/elements/Swiper
+include ../mixins/common/BlockHeader
+include ../mixins/common/CodePreviewBlock
+include ../mixins/common/ComponentLink
+
+prepend styles
+  link(href=`${CWD}vendors/swiper/swiper-bundle.min.css`, rel='stylesheet')
+
+prepend scripts
+  script(src=`${CWD}vendors/swiper/swiper-bundle.min.js`)
+
+append variables 
+  - var pageHeaderConfig = { title: "Swiper" }
+
+append mainContent
+  +Section 
+    +ComponentLink({
+      name: 'Swiper Js',
+      link: 'https://swiperjs.com/'
+    })
+    .row 
+      .col-lg-12.mb-4.mb-lg-0
+        +SwiperCarousel
+    .row
+      .col-lg-12.mb-4.mb-lg-0
+        +SwiperWithThumbnail
+    .row
+      .col-lg-12.mb-4.mb-lg-0
+        +SwiperWithoutThumbnail
+
+
+    +CodeBlock({
+      codeTitle: 'JavaScript',
+    })
+      script(src='vendors/swiper/swiper-bundle.min.js')
+
+    +CodeBlock({
+      codeTitle: 'CSS',
+    })
+      link(href='vendors/swiper/swiper-bundle.min.css' rel="stylesheet")
+

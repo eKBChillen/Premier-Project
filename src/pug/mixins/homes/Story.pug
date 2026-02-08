@@ -1,0 +1,39 @@
+mixin Story 
+  - 
+    var stories = [
+      {
+        title: "Awesome Team",
+        desc: "Before talking destination, we shine a spotlight across your organization <br/> to fully understand it.",
+        icon: "fas fa-users"
+      },
+      {
+        title: "Excellent Support",
+        desc: "If you face any trouble, you can always let our dedicated support team help you. They are ready for you 24/7.",
+        icon: "fas fa-comments"
+      },
+      {
+        title: "Faster Performance",
+        desc: "We develop a systematic well-ordered process of analysis, from concept through implementation.",
+        icon: "fas fa-bolt"
+      }
+    ]
+  +Section.pt-0 
+    .row.flex-center.text-center.pb-6
+      .col-12
+        .position-relative.mt-4.py-5.py-md-11
+          +Background({image: `${CWD}assets/img/video-screenshot-2.jpg` , className: "rounded-3"})
+          button.btn-elixir-play(data-bigpicture='{"ytSrc":"jlWMTNZNOc0"}' data-zanim-trigger="scroll" data-zanim-xs!={from:{opacity: 0, scale: 0.8}, to:{opacity: 1, scale: 1}, duration: 1})
+            span.fas.fa-play.fs-1
+
+
+    .row
+      each story in stories 
+        +StoryItem(story)
+
+
+mixin StoryItem(config)
+  .col-sm-6.col-lg-4.mt-3.mt-lg-0.px-4.px-sm-3(data-zanim-timeline!={}  data-zanim-trigger="scroll")
+    h5(data-zanim-xs!={delay: 0.0})
+      span.text-primary.me-3(class=`${config.icon}`)
+      | #{config.title}
+    p.mt-3.pe-3.pe-lg-5(data-zanim-xs!={delay: 0.1})!=config.desc

@@ -1,0 +1,39 @@
+mixin ServiceIntro  
+  - 
+    var introItems = [
+      {
+        title: "We Are Professional",
+        desc: "We resource, train, speak, mentor and encourage; marketplace leaders, business owners and career professionals to be effective in the workplace.",
+        icon: "comment-dots",
+        iconTransform: "flip-h"
+      },
+      {
+        title: "We Are Creative",
+        desc: "With so many factors to consider when deciding how to characterize your company , wouldn’t it be great to have a group of forward-thinking, well-informed individuals on board who know what they’re doing?",
+        icon: "palette",
+        iconTransform: "shrink-1"
+      },
+      {
+        title: "24/7 Great Support",
+        desc: "Design clever and compelling marketing strategies, improve product positioning, and drive conversion rates, Elixir is all time available to guide you.",
+        icon: "stopwatch",
+        iconTransform: "grow-1"
+      }
+    ]
+
+  .row
+    .col-lg-6.pe-lg-3
+      img(src=`${CWD}assets/img/why-choose-us.jpg` alt="about").rounded-3.img-fluid
+    .col-lg-6.px-lg-5.mt-6.mt-lg-0(data-zanim-timeline!={}  data-zanim-trigger="scroll")
+      each item, index in introItems 
+        - var isFirst = index === 0 
+        +IntroItem(item, isFirst)
+
+
+mixin IntroItem(config, isFirst)
+  .overflow-hidden
+    .px-4.px-sm-0(data-zanim-xs!={delay: 0.0} class=`${!isFirst ? 'mt-5' : ''}`)
+      h5.fs-0.fs-lg-1
+        span(class=`fas fa-${config.icon}` data-fa-transform=`${config.iconTransform}`).fs-1.me-2
+        | #{config.title}
+      p.mt-3 #{config.desc}

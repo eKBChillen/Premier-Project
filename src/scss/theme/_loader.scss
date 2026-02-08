@@ -1,0 +1,31 @@
+/*-----------------------------------------------
+|   Pre-loader
+-----------------------------------------------*/
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10001;
+  background-color: var(--#{$variable-prefix}primary);
+  opacity: 1;
+  transition: opacity .9s cubic-bezier(.77, 0, .18, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &.loaded{
+    opacity: 0;
+  }
+}
+
+.line-scale{
+  div{
+    background-color: var(--#{$variable-prefix}white);
+    width: 0.25rem;
+    margin: 0;
+  }
+}
+

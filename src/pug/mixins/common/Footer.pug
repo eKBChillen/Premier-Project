@@ -1,0 +1,13 @@
+mixin Footer
+  - var copyrightYear = new Date().getFullYear()
+  footer.footer.bg-primary.text-center.py-4
+    .container
+      .row.align-items-center.opacity-85.text-white
+        .col-md-3.text-md-start
+          a(href=`${CWD}index.html`)
+            img(src=`${CWD}assets/img/logo-light.png` alt="logo")
+        .col-md.mt-3.mt-md-0
+          p.lh-lg.mb-0.fw-semi-bold &copy; Copyright #{copyrightYear} Elixir Inc.
+        .col-md-5.col-lg-4.text-md-end.mt-3.mt-md-0
+          span.fw-semi-bold Made with ❤️ by 
+          a(href="https://themewagon.com/" target="_blank").text-white ThemeWagon

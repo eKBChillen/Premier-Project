@@ -1,0 +1,165 @@
+mixin SingleNews 
+	.overflow-hidden.mb-4(data-zanim-timeline!={} data-zanim-trigger="scroll")
+		div(data-zanim-xs!={delay: 0.0})
+			a(href="#!").d-inline-block.text-500 Thomas Been
+			| , &nbsp;
+			a(href="#!").d-inline-block.text-500 May 15, 2017
+		h4(data-zanim-xs!={delay: 0.1}) Tax impacts of lease accounting change
+
+	.row 
+		.col-lg-8
+			+NewsBody
+
+			+CommentBody
+
+		.col-lg-4.text-center.ms-auto.mt-5.mt-lg-0
+			.px-2
+				+Author
+
+				+SidebarNewsSlider
+
+				+Tags
+
+
+mixin NewsBody 
+	.card.mb-6 
+		img(src=`${CWD}assets/img/news-1.jpg` alt="new image").card-img-top
+		.card-body.p-5 
+			p.dropcap On 9 August 2016, HMRC released a consultation document to flag some potential tax impacts that a forthcoming change in lease accounting may have on the funding of plant and machinery. From 2019, lessees using IFRS (including FRS 101), as opposed to FRS 102 (UK GAAP), will no longer have to distinguish between finance and operating leases. All leases (except some small value leases or very short leases) will be capitalized on the lessee’s balance sheet at the NPV of the future payments from the day the lease starts. This accounting change will not affect lessors. At the moment, the tax treatment typically depends on whether a lease is a ‘long funding lease’ or not. If it is, then it is the lessee who gets capital allowances (CAs). However, much anti-avoidance legislation is focused on the concept of finance leases and the IFRS change will interfere with that. In its consultation, HMRC has floated four options for addressing the issue. The first is broadly the status quo, with some tinkering. The others contain the more radical suggestion to move towards an accounts-based regime for taxing leases, using a system of debits and credits somewhat akin to the loan relationship regime and which would similarly eliminate the capital/revenue divide.  ith such a proposal, including:
+
+			a(href="#!").d-block.my-3.ms-4 gust-2016/tax-impacts-of-lease-accunting-changes#sthash.J6Ddydx2.dpuf
+
+			p HMRC has identified several issues which should be addressed in conjunction with such a proposal, including:
+
+			ol
+				li
+					p.mb-2 Can HMRC trust companies to use ‘sensible’ depreciation policies or will there need to be legislation for it?
+				li
+					p.mb-2 In order to avoid distorting the ‘lease or buy’ decision, the government may be willing to offer an enhanced deduction to lessees that would otherwise have qualified for the AIA.
+				li
+					p.mb-2 Could HMRC combine an accounts-based regime with giving the lessee an option to claim CAs on the ‘right of use’ asset?
+
+			p Inevitably, there is a long way to go on these issues. But the eventual outcome is potentially quite far-reaching for UK corporates – for example if HMRC can become comfortable on the issue of ‘sensible’ depreciation policies without a lot of new anti-avoidance legislation.
+
+			p If you have any questions on the tax implications of lease accounting please contact David Porter.
+
+
+mixin CommentBody 
+	.card 
+		.card-body.p-5 
+			.pb-5 
+				h4 Top Comments
+				.row.my-5
+					.col-2.text-center
+						img(src=`${CWD}assets/img/portrait-8.jpg` style="min-width: 35px" alt="comment author").rounded-circle.img-fluid
+					.col-10
+						h5.mb-1 Post Heading
+						p.fs--1.text-500 May 15, 2017 at 9:33 am
+						p Their work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!
+						a(href="#!").d-block.my-3.text-end.me-4 Reply
+						hr.muted
+
+						.row.my-4
+							.col-2.text-center
+								img(src=`${CWD}assets/img/square-1.jpg` style="min-width: 35px" alt="comment author").rounded-circle.img-fluid
+							.col-10
+								h5.mb-1 Post Heading
+								p.fs--1.text-500 May 15, 2017 at 9:33 am
+								p Writing case studies was a daunting task for us. We didn’t know where to begin or what questions to ask, and clients never seemed to follow through when we asked. Elixir team did everything – with almost no time or effort for me!
+								a(href="#!").d-block.my-3.text-end.me-4 Reply
+						hr.muted
+
+				.row.my-4
+					.col-2.text-center
+						img(src=`${CWD}assets/img/square-2.jpg` style="min-width: 35px;" alt="comment author").rounded-circle.img-fluid
+					.col-10
+						h5.mb-1 Post Heading
+						p.fs--1.text-500 May 15, 2017 at 9:33 am
+						p As a sales gamification company, we were skeptical to work with a consultant to optimize our sales emails, but Elixir was highly recommended by many other Y-Combinator startups we knew. Elixir helped us run a ~6 week email campaign that brought us more leads than we had ever seen for a single effort.
+						a(href="#!").d-block.my-3.text-end.me-4 Reply
+						hr.muted
+
+			.pt-5 
+				h4 Leave A Comment
+				form.mt-4
+					.row
+						.col-12
+							input(type="text" placeholder="Your Name" aria-label="Your Name").form-control.bg-white
+						.col-12.mt-4
+							input(type="email" placeholder="Email" aria-label="Email").form-control.bg-white
+						.col-12.mt-4
+							textarea(rows="10" placeholder="Leave your comment here..." aria-label="Leave your comment here").form-control.bg-white
+						.col-12.mt-4
+							button.btn.btn-primary(type="Submit") Submit Comment
+
+
+mixin Author 
+	.card.mb-5 
+		.card-body.p-5 
+			.overflow-hidden(data-zanim-timeline!={} data-zanim-trigger="scroll")
+				img(data-zanim-xs!={delay: 0.0} src=`${CWD}assets/img/portrait-8.jpg` alt="Author").rounded-circle
+				h5.text-capitalize.mt-3.mb-0(data-zanim-xs!={delay: 0.1}) thomas been
+				p.mb-0.mt-3(data-zanim-xs!={delay: 0.2}) Flattering high rise easy care flared fit - cut straight leg that flares at the ankle comfy tight. Regular fit viscose elastane leather black wool.
+				.pt-4(data-zanim-xs!={delay: 0.3})
+					a(href="#!").d-inline-block
+						span.fab.fa-linkedin.fs-2.mx-2.text-400
+					a(href="#!").d-inline-block
+						span.fab.fa-twitter-square.fs-2.mx-2.text-400
+					a(href="#!").d-inline-block
+						span.fab.fa-facebook-square.fs-2.mx-2.text-400
+
+
+mixin SidebarNewsSlider 
+	-
+		var news = [
+			{
+				title: "Tax impacts of lease mean accounting change",
+				author: "Paul O'Sullivan",
+				text: "HMRC released a consultation document to flag some potential tax impacts that a forthcoming change...",
+				link: "news.html",
+				img: "9.jpg"
+			},
+			{
+				title: "What brexit means for data protection law",
+				author: "Enrico Ambrosi",
+				text: "Assuming that the referendum is not ignored completely, there are two possible futures for the UK...",
+				link: "news.html",
+				img: "10.jpg"
+			},
+			{
+				title: "The growing meanace of social engineering fraud",
+				author: "Robson",
+				text: "Social engineering involves the collection of information from various sources about a target...",
+				link: "news.html",
+				img: "11.jpg"
+			}
+		]
+
+	.mb-5 
+		h5.mb-4 Related Articles
+		.bg-white.pb-5.rounded-3 
+			.swiper.news-slider.pb-4(data-swiper!={
+				loop: true,
+				slidesPerView: 1,
+				pagination: {
+					el: '.swiper-pagination',
+					type: 'bullets',
+					clickable: true
+				}
+			})
+				.swiper-wrapper
+					each item in news 
+						.swiper-slide
+							+NewsCard(item)
+
+				.swiper-pagination
+
+mixin Tags 
+	- var tags = ["Advisory", "Finance", "Ideas", "Data", "Market", "Tax", "Consulting", "Accounting"]
+	.card 
+		.card-body.p-5 
+			h5 Tags
+			ul.nav.tags.mt-3.fs--1
+				each tag in tags 
+					li
+						a(href="#!").btn.btn-sm.btn-outline-primary.m-1.p-2=tag

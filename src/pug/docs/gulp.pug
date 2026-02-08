@@ -1,0 +1,9 @@
+extends ../layouts/LayoutDocumentation
+include ../mixins/common/CodePreviewBlock
+include ../mixins/docs/Gulp
+
+append variables 
+	- var pageHeaderConfig = { title: 'Gulp' };
+
+block content
+	+Gulp

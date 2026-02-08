@@ -1,0 +1,17 @@
+mixin NewsCard(config)
+  .card
+    a(href=`${CWD}news/${config.link}`)
+      img.card-img-top(src=`${CWD}assets/img/${config.img}` alt="Featured Image")
+    .card-body(data-zanim-timeline!={} data-zanim-trigger="scroll")
+      .overflow-hidden
+        a(href=`${CWD}news/${config.link}`)
+          h5(data-zanim-xs!={delay: 0.0})=config.title
+      .overflow-hidden
+        p.text-500(data-zanim-xs!={delay: 0.1}) By #{config.author}
+      .overflow-hidden
+        p.mt-3(data-zanim-xs!={delay: 0.2})=config.text
+      .overflow-hidden
+        .d-inline-block(data-zanim-xs!={delay: 0.3})
+          a(href=`${CWD}news/${config.link}`).d-flex.align-items-center Learn More
+            .overflow-hidden.ms-2(data-zanim-xs!={from:{opacity: 0, x: -30}, to:{opacity: 1, x: 0}, delay: 0.8})
+              span.d-inline-block.fw-medium &xrarr;
