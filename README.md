@@ -1,7 +1,4 @@
-Premier-Project
-Premier's
-website
+
 ---
-permalink: 
-/index.html
+permalink: /public/index.html
 ---
